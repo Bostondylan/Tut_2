@@ -4,7 +4,6 @@ import java.util.Scanner;
 public class Main {
     // Static list of users, acting as a database
     private static ArrayList<User> users = new ArrayList<>();
-
     // Mock authentication service that always returns the first user when log in, and does nothing when sign up
     private static AuthenticationService authService = new AuthenticationService(users);
 
