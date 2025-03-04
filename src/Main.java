@@ -3,9 +3,9 @@ import java.util.Scanner;
 
 public class Main {
     // Static list of users, acting as a database
-    private static ArrayList<User> users = new ArrayList<>();
+    private static final ArrayList<User> users = new ArrayList<>();
     // Mock authentication service that always returns the first user when log in, and does nothing when sign up
-    private static AuthenticationService authService = new AuthenticationService(users);
+    private static final AuthenticationService authService = new AuthenticationService(users);
 
     private static boolean isRunning = true;
 
@@ -68,6 +68,9 @@ public class Main {
         User user = authService.logIn(username, password);
         System.out.println("Welcome, " + user.getUsername() + "!");
         // TODO Later: Add the to-do list operations
+        // TODO Now: Create an instance of the ToDoList class with the logged-in user and call the run method
+        ToDoList todolist = new ToDoList(user);
+        todolist.run();
     }
 
     /**
